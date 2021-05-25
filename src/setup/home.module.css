@@ -1,0 +1,62 @@
+@keyframes slide {
+  from{transform: translateY(-300px);}
+  to{transform: translateY(-40px);}
+} 
+
+@keyframes slide-2 {
+  from{transform: translateX(-250px);}
+  to{transform: translateX(0px);}
+} 
+
+@keyframes slide-3 {
+  from{transform: translateX(250px);}
+  to{transform: translateX(0px);}
+} 
+
+.weatherAnimationsMain p{
+  text-align: center;
+  font-size: 23px;
+}
+
+.animationOne {
+  background-color: white;
+  height:120px;
+  width: 230px;
+  margin-top: 90px;
+  opacity: 0.7;
+  border-radius: 40px 18px;
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  margin-right: 500px;
+  animation-name: slide-2;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.animationTwo {
+  background-color: white;
+  height:120px;
+  width: 230px;
+  margin-top: 80px;
+  opacity: 0.7;
+  border-radius: 40px 40px 18px 40px;
+  margin-left: 115px;
+  border: 2px solid black;
+  animation-name: slide-3;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.animationThree {
+  background-color: white;
+  height:120px;
+  width: 230px;
+  margin-top: 80px;
+  opacity: 0.7;
+  border-radius: 40px 18px;
+  border: 2px solid black;
+  animation-name: slide-2;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}

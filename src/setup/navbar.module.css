@@ -1,0 +1,31 @@
+
+/* Navbar */
+
+.navbarIcon {
+  z-index: -1;
+  position: relative;
+}
+
+.cloudIcon {
+  position: absolute;
+  z-index: 1;
+  top: -17px;
+  margin-left: 240px;
+  color: #6495ED;
+}
+
+/* Site Logo */
+
+.logo {
+  margin-left: -20px;
+ }
+
+ /* App Name */
+
+.mainNavbarWeather {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: underline;
+  text-decoration-color: #6495ED;
+  z-index: 2;
+}

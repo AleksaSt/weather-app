@@ -1,0 +1,286 @@
+
+/* Body */
+
+body {
+  background-image: linear-gradient(#6495ED, white) ;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Date */
+
+.dateBuilder {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  width: 100%;
+  width: 100vw;
+  left: 0;
+  position: absolute;
+}
+
+.weatherCard {
+  top: 70px;
+  height: 110vh;
+  left: -15px;
+  background-attachment: fixed;
+  background-position: sticky;
+  width: 100vw;
+  background-image: url('./assets/blue-sky-30.jpg');
+  overflow: hidden;  
+}
+
+.weatherCardFont {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.weatherIcon {
+  width: 70px;
+  height: 70px;
+}
+
+.weatherDescription {
+text-transform: capitalize;
+}
+
+.weatherMain {
+  font-size: 105px;
+  color: white;
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.minMaxTemperature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 28px;
+  margin-top: -125px;
+}
+
+.line {
+  position: absolute;
+  top: 146px;
+  overflow: hidden;
+  width: 60px;
+  height: 3px;
+  background-color: white;
+}
+
+
+.homeText {
+  margin-top: 200px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  input[type=text] {
+    width: 100%;
+    margin-top: 120px;
+    border: 2px solid white;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* Weather Details */
+
+
+.detailsContainer {
+ margin-top: 245px;
+ animation-name: slide;
+ animation-duration: 2s;
+ animation-fill-mode: forwards;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: bold;
+}
+
+.detailsWeather{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.detailsWeather div {
+  background-color: white;
+  opacity: 0.5;
+  font-size: 20px;
+  text-align: center;
+}
+
+.detailsWeather p:hover {
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.lineTwo {
+  overflow: hidden;
+  width: 79%;
+  margin-top: 15px;
+  height: 3px;
+  background-color: white;
+}
+
+
+ /* Footer/About 
+
+
+.footer-container{
+  background-color: #f2f2f2;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  margin-left: -15px;
+  overflow: hidden;
+}
+
+.footer-class-div {
+  margin-top: 150px;  
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  margin-bottom: -10px;
+  text-decoration: underline;
+}
+
+.weatherApp {
+  text-decoration: none;
+}
+
+.weatherApp-text {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.weatherApp-text-two {
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+ Footer/About Social Media 
+
+.footer-social-media {
+  display: flex;
+  justify-content: center;
+}
+
+[class^="sm"] {
+  padding: 10px;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 50%;
+}
+
+.sm:hover {
+    opacity: 0.7;
+}
+
+.sm-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.sm-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.sm-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.sm-instagram {
+  background: #125688;
+  color: white;
+}
+
+.sm-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.weatherApp-text-three {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-image{
+  height: 120px;
+  width: 120px;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: -35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grey-line-class{
+  top: 712px;
+  width: 100%;
+  height: 5px;
+  background: grey;
+  position: absolute;
+}
+
+.weatherApp-text-four {
+  display: block;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.app-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+}
+
+.app-image {
+  height: 50px;
+  width: 120px;
+}
+
+.grey-line-class-two{
+  top: 194px;
+  width: 100%;
+  height: 5px;
+  background: grey;
+  position: absolute;
+} */
+
+
+/* Current Weather Page Animations */
+
+
+/* Animations */
+
+@keyframes slide {
+  from{transform: translateY(-300px);}
+  to{transform: translateY(-40px);}
+} 
