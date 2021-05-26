@@ -95,7 +95,7 @@ const WeeklyWeather = () => {
                     <div><p>{Math.round(day.temp.min - 273.15)}°C</p></div>
                   </div>
                   <div className={weeklyCSS.lineClassOne}></div>
-                  <Button onClick={() => showInfo(day)} variant="outline-light">More Details</Button>{' '}
+                  <Button className={weeklyCSS.btn} onClick={() => showInfo(day)} variant="outline-light">More Details</Button>{' '}
     
                   { day.isExtended ? <div className={weeklyCSS.weatherCardWeeklyMainDetails}>
                     <div>

@@ -17,17 +17,13 @@ body {
 .weatherCardDate {
   font-size: 23px;
   margin-top: 30px;
+  font-weight: bold;
 }
 
 .weatherCardDescription {
   font-size: 20px;
   text-transform: capitalize;
-  font-weight: bold;
 }
-/* 
-.weatherCard-description:hover {
-  font-weight: bold;
-} */
 
 .weatherCardTemperature {
   font-size: 20px;
@@ -51,14 +47,20 @@ body {
 }
 
 .lineClassOne {
-  height: 2px;
+  height: 3px;
   background-color: white;
+  width: 333px;
 }
 
 .lineClassTwo {
   width: 53px;
-  height: 3px;
+  height: 4px;
   background-color: white;
+  margin-bottom: 15px;
+}
+
+.btn {
+  margin-top: 5px;
 }
 
 .weatherCardWeeklyMainDetails {
@@ -67,12 +69,13 @@ body {
   display: grid;
   grid-template-columns: auto auto;
   background-color: white;
-  padding: 10px;
+  padding-top: 15px; 
+  padding-left: 20px;
   font-size: 20px;
   margin: 20px 0px;
 }
 
-.weatherCard-weekly-main-details p:hover {
+.weatherCardWeeklyMainDetails p:hover {
   font-weight: bold;
 }
 

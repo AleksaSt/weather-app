@@ -47,12 +47,12 @@
   justify-content: center;
 }
 
-/* [class^="sm"] {
+a.smFacebook, a.smTwitter, a.smYoutube, a.smInstagram, a.smLinkedin {
   padding: 10px;
   text-align: center;
   margin: 20px 10px;
   border-radius: 50%;
-} */
+}
 
 .sm:hover {
     opacity: 0.7;

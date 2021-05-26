@@ -16,7 +16,7 @@ function ReturnSection() {
         <div className={aboutCSS.footerDiv}>
           <div className={aboutCSS.greyLineTwo}></div>
           <b className={aboutCSS.weatherAppText}>Connect With Us</b>
-          <div className={aboutCSS.footerSocialMedia}>
+          <div id="sm" className={aboutCSS.footerSocialMedia}>
             <a href="https://www.facebook.com/" className={aboutCSS.smFacebook}>
               <IoLogoFacebook size="30px" />
             </a>

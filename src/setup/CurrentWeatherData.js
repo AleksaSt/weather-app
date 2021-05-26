@@ -18,10 +18,10 @@ const api = {
 
 const CurrentWeatherData = () => {
 
-  const [weather, setWeather] = useState({});
-  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({})
+  const [query, setQuery] = useState('')
   const [error, setError] = useState(null)
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
   const [size, setSize] = useState(window.innerHeight)
 
 
