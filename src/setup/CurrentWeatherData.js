@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Spinner} from 'react-bootstrap'
 import { Modal, Button } from 'react-bootstrap'
 import {IoSearch} from 'react-icons/io5'
 import {FaTemperatureHigh} from 'react-icons/fa'
@@ -22,11 +22,12 @@ const CurrentWeatherData = () => {
   const [query, setQuery] = useState('')
   const [error, setError] = useState(null)
   const [show, setShow] = useState(false)
-  const [size, setSize] = useState(window.innerHeight)
+  const [loading, setLoading] = useState(false)
 
 
   const search = evt => { 
     if(evt.key === 'Enter'){
+      setLoading(true)
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => {
         if(!res.ok){
@@ -34,11 +35,12 @@ const CurrentWeatherData = () => {
         }
         return res.json()
       })
-      .then(result => {
+      .then(result => { 
         console.log(result)
         setWeather(result)
         setQuery('')
         setShow(true)
+        setLoading(false)
       })
       .catch(err => {
         setError(err.message);
@@ -46,6 +48,12 @@ const CurrentWeatherData = () => {
     }  
   }
 
+  // useEffect(() => {
+  //   setLoading(true)
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 1000)
+  // }, [])
  
 
   function Example() {
@@ -102,7 +110,7 @@ const CurrentWeatherData = () => {
                 ) 
                 })}
               </p>
-              <div className={indexCSS.detailsContainer}>
+              {show && <div className={indexCSS.detailsContainer}>
                 <div className={indexCSS.details}>
                   <p>Details</p>
                   <div className={indexCSS.lineTwo}></div>
@@ -133,7 +141,7 @@ const CurrentWeatherData = () => {
                     <p>Visibility: {weather.visibility} m</p>
                   </div>
                 </div>
-              </div>
+              </div>}
             </div>
             ) : ('')}
         </Card.Body>
@@ -145,10 +153,11 @@ const CurrentWeatherData = () => {
     <> 
       {error && <Example />}
       <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
-      <IoSearch size="30px" style={{color: "#6495ED", position: "relative", left: "305px", top:"-30px"}} />
+      <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}} />
       <div className={indexCSS.dateBuilder}>
         {dateBuilder(new Date())}
       </div>
+      {loading ? <Spinner animation="border" variant="primary" className={indexCSS.spinner} /> : null  }
       {show && <WeatherCard />}
       {show || <Home />}
     </>

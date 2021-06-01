@@ -2,13 +2,13 @@
 /* Body */
 
 body {
-  background-image: linear-gradient(#6495ED, white) ;
+  background-image: linear-gradient(#6495ED, white) ; 
   background-attachment: fixed;
   width: 100vw;
   height: 100vh;
-  padding: 0;
-  margin: 0;
   overflow-x: hidden;
+  padding: 0; 
+  margin: 0;  
 }
 
 /* Date */
@@ -21,16 +21,13 @@ body {
   background-color: white;
   opacity: 0.7;
   color: black;
-  width: 100%;
   width: 100vw;
-  left: 0;
   position: absolute;
 }
 
 .weatherCard {
   top: 70px;
   height: 110vh;
-  left: -15px;
   background-attachment: fixed;
   background-position: sticky;
   width: 100vw;
@@ -49,7 +46,7 @@ body {
 }
 
 .weatherDescription {
-text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .weatherMain {
@@ -84,12 +81,11 @@ text-transform: capitalize;
 
 @media only screen and (max-width: 600px) {
   input[type=text] {
-    width: 100%;
+    width: 330px;
     margin-top: 120px;
     border: 2px solid white;
     border-radius: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 22px;
   }
 }
 
@@ -111,7 +107,7 @@ text-transform: capitalize;
   font-weight: bold;
 }
 
-.detailsWeather{
+.detailsWeather {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -139,6 +135,15 @@ text-transform: capitalize;
   background-color: white;
 }
 
+
+.spinner {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  z-index: 5;
+  top: 280px;
+  left: 160px;
+}
 
 /* Current Weather Page Animations */
 

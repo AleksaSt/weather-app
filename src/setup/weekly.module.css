@@ -3,10 +3,19 @@ body {
   height: 100vh;
 }
 
+@media only screen and (max-width: 600px) {
+  input[type=text] {
+    width: 330px;
+    margin-top: 120px;
+    border: 2px solid white;
+    border-radius: 30px;
+    margin-left: 22px;
+  }
+}
+
 .weatherCardWeekly {
   top: 70px;
   /* height: 100vh; */
-  left: -15px;
   background-attachment: fixed;
   background-position: sticky;
   width: 100vw;
@@ -103,4 +112,13 @@ body {
   width: 100vw;
   left: 0;
   position: absolute;
+}
+
+.spinner {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  z-index: 5;
+  top: 280px;
+  left: 160px;
 }

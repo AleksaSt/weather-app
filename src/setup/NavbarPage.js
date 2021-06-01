@@ -7,8 +7,7 @@ import navbarCSS from './navbar.module.css'
 const NavbarPage = () => {
   return (
     <>
-     <div className="navbar-main">
-     <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar bg="light" expand="lg" fixed="top">
         <div className={navbarCSS.navbarIcon}>
           <TiWeatherCloudy size="40px" className={navbarCSS.cloudIcon} />
         </div>
@@ -28,8 +27,7 @@ const NavbarPage = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-     </Navbar>
-   </div>    
+     </Navbar> 
   </>
   )  
 }

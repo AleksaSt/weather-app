@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { Card, Button } from 'react-bootstrap'
-import weeklyCSS from './weekly.module.css'
+import { Card, Button, Spinner } from 'react-bootstrap'
 import {IoSearch} from 'react-icons/io5'
+import weeklyCSS from './weekly.module.css'
 
 const api = {
   key: 'c3512f3ec8bd5a8b7c26d9756efd841c',
@@ -13,10 +13,12 @@ const WeeklyWeather = () => {
   const [query, setQuery] = useState('');
   const [show, setShow] = useState(false);
   const [showResults, setShowResults] = useState(false)
+  const [loading, setLoading] = useState(false)
   // const [city, setCity] = useState({});
 
   const search = evt => {
     if(evt.key === 'Enter'){
+      setLoading(true)
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => res.json())
       .then(result => {
@@ -26,6 +28,7 @@ const WeeklyWeather = () => {
           console.log(resultDaily)
           setWeather(resultDaily)
           setShow(true)
+          setLoading(false)
           // console.log(weather)
         })
       })    
@@ -128,13 +131,12 @@ const WeeklyWeather = () => {
   
   return (
     <>   
-      <div>
         <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
-      </div>
-      <IoSearch size="30px" style={{color: "#6495ED", position: "relative", left: "305px", top:"-30px"}} />
+      <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}} />
       <div className={weeklyCSS.dateBuilderWeekly}>
         {dateBuilder(new Date())}
       </div>
+      {loading ? <Spinner animation="border" variant="primary" className={weeklyCSS.spinner} /> : null  }
      <div>
       {show && <WeatherCard />}
      </div>
