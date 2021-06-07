@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Card, Button, Spinner } from 'react-bootstrap'
 import {IoSearch} from 'react-icons/io5'
 import weeklyCSS from './weekly.module.css'
@@ -15,14 +15,6 @@ const WeeklyWeather = () => {
   const [showResults, setShowResults] = useState(false)
   const [loading, setLoading] = useState(false)
   // const [city, setCity] = useState({});
-  let [date,setDate] = useState(new Date());
-    
-    useEffect(() => {
-        var timer = setInterval(()=>setDate(new Date()), 1000 )
-        return function cleanup() {
-            clearInterval(timer)
-        }
-    });
 
   const search = evt => {
     if(evt.key === 'Enter'){
@@ -30,7 +22,7 @@ const WeeklyWeather = () => {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => res.json())
       .then(result => {
-        fetch(`${api.base}onecall?lat=${result.coord.lat}&lon=${result.coord.lon}&appid=${api.key}`)
+        fetch(`${api.base}onecall/timemachine?lat=${result.coord.lat}&lon=${result.coord.lon}&dt=${result.dt}&appid=${api.key}`)
         .then(res => res.json())
         .then(resultDaily => {
           console.log(resultDaily)
@@ -139,8 +131,7 @@ const WeeklyWeather = () => {
   
   return (
     <>   
-      <h2 className={weeklyCSS.time}>{date.toLocaleTimeString()}</h2>
-      <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
+        <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
       <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}} />
       <div className={weeklyCSS.dateBuilderWeekly}>
         {dateBuilder(new Date())}
@@ -154,5 +145,3 @@ const WeeklyWeather = () => {
 }
 
 export default WeeklyWeather;
-
-

@@ -3,13 +3,6 @@ body {
   height: 100vh;
 }
 
-.time {
-  position: absolute;
-  top: 80px;
-  margin-left: 120px; 
-  font-size: 28px;
-}
-
 @media only screen and (max-width: 600px) {
   input[type=text] {
     width: 330px;
@@ -21,7 +14,7 @@ body {
 }
 
 .weatherCardWeekly {
-  top: 66px;
+  top: 70px;
   /* height: 100vh; */
   background-attachment: fixed;
   background-position: sticky;
@@ -110,7 +103,7 @@ body {
 .dateBuilderWeekly {
   text-align: center;
   margin-top: 25px;
-  font-size: 27px;
+  font-size: 30px;
   font-family: Helvetica, Arial, sans-serif;
   background-color: white;
   opacity: 0.7;

@@ -23,11 +23,20 @@ const CurrentWeatherData = () => {
   const [error, setError] = useState(null)
   const [show, setShow] = useState(false)
   const [loading, setLoading] = useState(false)
+  let [date,setDate] = useState(new Date());
+    
+    useEffect(() => {
+        var timer = setInterval(()=>setDate(new Date()), 1000 )
+        return function cleanup() {
+            clearInterval(timer)
+        }
+    });
 
 
   const search = evt => { 
     if(evt.key === 'Enter'){
       setLoading(true)
+      
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => {
         if(!res.ok){
@@ -49,11 +58,24 @@ const CurrentWeatherData = () => {
   }
 
   // useEffect(() => {
-  //   setLoading(true)
+  //   getLocation()
   //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 1000)
+  //     getLocation()
+  //   }, 10000)
   // }, [])
+
+
+  // const getLocSuccess = (position) => {
+  //     console.log(position)
+  // }
+
+  // const getLocError = (errorLoc) => {
+  //   console.log(errorLoc)
+  // }
+
+  // const getLocation = () => {
+  //   navigator.geolocation.getCurrentPosition(getLocSuccess, getLocError)
+  // }
  
 
   function Example() {
@@ -152,6 +174,7 @@ const CurrentWeatherData = () => {
   return (
     <> 
       {error && <Example />}
+      <h2 className={indexCSS.time}>{date.toLocaleTimeString()}</h2>
       <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
       <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}} />
       <div className={indexCSS.dateBuilder}>

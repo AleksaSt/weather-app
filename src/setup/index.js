@@ -6,6 +6,7 @@ import About from './About'
 import CurrentWeatherData from './CurrentWeatherData'
 import WeeklyWeather from './WeeklyWeather'
 import HourlyWeather from './HourlyWeather'
+// import HistoricalWeather from './HistoricalWeather'
 
 import Error from './Error'
 //navbar
@@ -21,6 +22,9 @@ const ReactRouter = () => {
       <Route path='/hourly'>
         <HourlyWeather />
       </Route>
+      {/* <Route path='/historical'>
+        <HistoricalWeather />
+      </Route> */}
       <Route path='/weekly'>
         <WeeklyWeather />
       </Route>

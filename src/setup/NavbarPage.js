@@ -21,7 +21,7 @@ const NavbarPage = () => {
                 <NavDropdown.Item href="/weekly">7 Day Forecast</NavDropdown.Item>
                 <NavDropdown.Item href="/hourly">Hourly Forecast</NavDropdown.Item>
                 <NavDropdown.Item href="/minutely">Minutely Forecast</NavDropdown.Item>
-                <NavDropdown.Item href="/historical">Historical data for 5 previous days</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.wunderground.com/history">Historical data for 5 previous days</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item  href="/about">About</NavDropdown.Item>
               </NavDropdown>
