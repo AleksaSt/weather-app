@@ -10,15 +10,20 @@ body {
   padding: 0; 
   margin: 0;  
 }
-
+  
 /* Date */
+
+.timeContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .time {
   position: absolute;
   top: 80px;
-  margin-left: 120px; 
   font-size: 28px;
 }
-
+  
 .dateBuilder {
   text-align: center;
   margin-top: 25px;
@@ -30,7 +35,7 @@ body {
   width: 100vw;
   position: absolute;
 }
-
+  
 .weatherCard {
   top: 66px;
   height: 110vh;
@@ -40,28 +45,28 @@ body {
   background-image: url('./assets/blue-sky-30.jpg');
   overflow: hidden;  
 }
-
+  
 .weatherCardFont {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
-
+  
 .weatherIcon {
   width: 70px;
   height: 70px;
 }
-
+  
 .weatherDescription {
   text-transform: capitalize;
 }
-
+  
 .weatherMain {
   font-size: 105px;
   color: white;
   margin-top: 30px;
   font-family: 'Roboto', sans-serif;
 }
-
+  
 .minMaxTemperature {
   display: flex;
   flex-direction: column;
@@ -69,7 +74,7 @@ body {
   font-size: 28px;
   margin-top: -125px;
 }
-
+  
 .line {
   position: absolute;
   top: 146px;
@@ -78,61 +83,58 @@ body {
   height: 3px;
   background-color: white;
 }
-
-
+   
 .homeText {
   margin-top: 200px;
   text-align: center;
 }
-
-@media only screen and (max-width: 600px) {
-  input[type=text] {
-    width: 330px;
-    margin-top: 120px;
-    border: 2px solid white;
-    border-radius: 30px;
-    margin-left: 22px;
-  }
+   
+input[type=text] {
+  width: 330px;
+  margin-top: 120px;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin-left: 22px;
 }
-
-
+    
+  
 /* Weather Details */
-
-
+  
+  
 .detailsContainer {
- margin-top: 245px;
- animation-name: slide;
- animation-duration: 2s;
- animation-fill-mode: forwards;
+  margin-top: 245px;
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
-
+  
 .details {
   display: flex;
   justify-content: space-between;
   color: white;
   font-weight: bold;
 }
-
+  
 .detailsWeather {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 5px;
 }
-
+  
 .detailsWeather div {
   background-color: white;
   opacity: 0.5;
   font-size: 20px;
   text-align: center;
 }
-
+  
 .detailsWeather p:hover {
   color: black;
   font-weight: bold;
   font-size: 22px;
 }
-
+  
 .lineTwo {
   overflow: hidden;
   width: 79%;
@@ -140,8 +142,7 @@ body {
   height: 3px;
   background-color: white;
 }
-
-
+  
 .spinner {
   height: 60px;
   width: 60px;
@@ -150,13 +151,24 @@ body {
   top: 280px;
   left: 160px;
 }
-
+  
 /* Current Weather Page Animations */
-
-
+  
+  
 /* Animations */
-
+  
 @keyframes slide {
   from{transform: translateY(-300px);}
   to{transform: translateY(-40px);}
 } 
+
+@media screen and (min-width: 768px) {
+  .time {
+    font-size: 38px;
+    top: 74px;  
+  }
+
+  input[type=text] {
+    width: 710px;
+  }
+}

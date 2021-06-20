@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Card, Button, Spinner } from 'react-bootstrap'
+import {Card, Button, Spinner} from 'react-bootstrap'
 import {IoSearch} from 'react-icons/io5'
 import weeklyCSS from './weekly.module.css'
 
@@ -138,14 +138,19 @@ const WeeklyWeather = () => {
   }
   
   return (
-    <>   
-      <h2 className={weeklyCSS.time}>{date.toLocaleTimeString()}</h2>
-      <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
-      <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}} />
+    <>
+      <div className={weeklyCSS.timeContainer}> 
+        <h2 className={weeklyCSS.time}>{date.toLocaleTimeString()}</h2>
+      </div>
+      <div className={weeklyCSS.inputContainer}>
+        <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
+        <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}}/>
+      </div>   
       <div className={weeklyCSS.dateBuilderWeekly}>
         {dateBuilder(new Date())}
       </div>
-      {loading ? <Spinner animation="border" variant="primary" className={weeklyCSS.spinner} /> : null  }
+      {/* <div className={weeklyCSS.sectionOne}></div> */}
+      {loading ? <div className={weeklyCSS.spinnerContainer}><Spinner animation="border" variant="primary" className={weeklyCSS.spinner}/></div>  : null  }
      <div>
       {show && <WeatherCard />}
      </div>

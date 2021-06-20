@@ -3,108 +3,31 @@ body {
   height: 100vh;
 }
 
+/* .sectionOne {
+  color: blue;
+  top: 150px;
+  height: 200px;
+  width: 5px;
+  z-index: 10;
+} */
+
+.timeContainer {
+  display: flex;
+  justify-content: center;
+}
+  
 .time {
   position: absolute;
   top: 80px;
-  margin-left: 120px; 
   font-size: 28px;
 }
-
-@media only screen and (max-width: 600px) {
-  input[type=text] {
-    width: 330px;
-    margin-top: 120px;
-    border: 2px solid white;
-    border-radius: 30px;
-    margin-left: 22px;
-  }
-}
-
-.weatherCardWeekly {
-  top: 66px;
-  /* height: 100vh; */
-  background-attachment: fixed;
-  background-position: sticky;
-  width: 100vw;
-  background-image: url('./assets/blue-sky-30.jpg');
-  overflow:  scroll ;  
-}
-
-.weatherCardDate {
-  font-size: 23px;
-  margin-top: 30px;
-  font-weight: bold;
-}
-
-.weatherCardDescription {
-  font-size: 20px;
-  text-transform: capitalize;
-}
-
-.weatherCardTemperature {
-  font-size: 20px;
-}
-
-.minMaxWeather {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-size: 25px;
-  color: black;
-  margin-top: -107px;
-}
-
-.lineClassMain {
-  position: absolute;
-  top: 75px;
-  width: 333px;
-  height: 4px;
-  background-color: white;
-}
-
-.lineClassOne {
-  height: 3px;
-  background-color: white;
-  width: 333px;
-}
-
-.lineClassTwo {
-  width: 53px;
-  height: 4px;
-  background-color: white;
-  margin-bottom: 15px;
-}
-
-.btn {
-  margin-top: 5px;
-}
-
-.weatherCardWeeklyMainDetails {
-  opacity: 0.5;
-  border-radius: 25px; 
-  display: grid;
-  grid-template-columns: auto auto;
-  background-color: white;
-  padding-top: 15px; 
-  padding-left: 20px;
-  font-size: 20px;
-  margin: 20px 0px;
-}
-
-.weatherCardWeeklyMainDetails p:hover {
-  font-weight: bold;
-}
-
-
-.weatherCardMain {
-  text-align: center;
-  font-size: 33px;
-  color: white;
-}
-
-.weatherIconWeekly {
-  width: 80px;
-  height: 80px;
+  
+input[type=text] {
+  width: 330px;
+  margin-top: 120px;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin-left: 22px;
 }
 
 .dateBuilderWeekly {
@@ -120,6 +43,97 @@ body {
   left: 0;
   position: absolute;
 }
+  
+.weatherCardWeekly {
+  top: 66px;
+  background-attachment: fixed;
+  background-position: sticky;
+  width: 100vw;
+  background-image: url('./assets/blue-sky-30.jpg');
+  overflow:  scroll ;  
+}
+  
+.weatherCardDate {
+  font-size: 23px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+  
+.weatherCardDescription {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+  
+.weatherCardTemperature {
+  font-size: 20px;
+}
+  
+.minMaxWeather {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 25px;
+  color: black;
+  margin-top: -107px;
+}
+  
+.lineClassMain {
+  position: absolute;
+  top: 75px;
+  width: 333px;
+  height: 4px;
+  background-color: white;
+}
+  
+.lineClassOne {
+  height: 3px;
+  background-color: white;
+  width: 333px;
+}
+  
+.lineClassTwo {
+  width: 53px;
+  height: 4px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+  
+.btn {
+  margin-top: 5px;
+}
+  
+.weatherCardWeeklyMainDetails {
+  opacity: 0.5;
+  border-radius: 25px; 
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: white;
+  padding-top: 15px; 
+  padding-left: 20px;
+  font-size: 20px;
+  margin: 20px 0px;
+}
+  
+.weatherCardWeeklyMainDetails p:hover {
+  font-weight: bold;
+}
+  
+.weatherCardMain {
+  text-align: center;
+  font-size: 33px;
+  color: white;
+}
+  
+.weatherIconWeekly {
+  width: 80px;
+  height: 80px;
+}
+ 
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
 .spinner {
   height: 60px;
@@ -127,5 +141,128 @@ body {
   position: absolute;
   z-index: 5;
   top: 280px;
-  left: 160px;
 }
+  
+@media screen and (min-width: 768px) {
+  .time {
+    font-size: 38px;
+    top: 74px;    
+  }
+
+  input[type=text] {
+    width: 710px;
+  }
+
+  .weatherCardDate {
+    font-size: 28px;
+  }
+
+  .weatherCardDescription {
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+
+  .weatherCardTemperature {
+    font-size: 30px;
+  }
+
+  .minMaxWeather {
+    font-size: 35px;
+  }
+
+  .lineClassMain {
+    width: 716px;
+  }
+
+  .lineClassOne {
+    width: 716px;
+  }
+  
+  .lineClassTwo {
+    width: 78px;
+  }
+
+  .weatherCardMain {
+    font-size: 38px;
+  }
+
+  .weatherIconWeekly {
+    width: 90px;
+    height: 90px;
+  }
+
+  .weatherCardWeeklyMainDetails {
+    font-size: 22px;
+    padding-left: 90px;
+  }
+
+  .spinner {
+    height: 80px;
+    width: 80px;
+    top: 180px;
+  }
+}
+ 
+@media screen and (min-width: 1024px) {
+  .inputContainer {
+    display: flex;
+    justify-content: center; 
+  } 
+
+  input[type=text] {
+    width: 710px;
+    margin-right: 22px;
+  }
+
+  .lineClassMain {
+    width: 966px;
+  }
+
+  .lineClassOne {
+    width: 966px;
+  }
+
+  .weatherCardWeeklyMainDetails {
+    padding-left: 160px;
+  }
+  
+  .spinner {
+    height: 90px;
+    width: 90px;
+    top: 280px;
+  }
+}
+  
+  @media screen and (min-width: 1224px) {
+    .inputContainer {
+      display: flex;
+      justify-content: center; 
+    } 
+  
+    input[type=text] {
+      width: 710px;
+      margin-right: 22px;
+    }
+  
+    .lineClassMain {
+      width: 1166px;
+    }
+  
+    .lineClassOne {
+      width: 1166px;
+    }
+  
+    .weatherCardWeeklyMainDetails {
+      padding-left: 160px;
+    }
+    
+    .spinner {
+      height: 90px;
+      width: 90px;
+      top: 280px;
+    }
+  }
+
+
+
+

@@ -10,33 +10,28 @@ import {GiWindsock} from 'react-icons/gi'
 import {WiBarometer} from 'react-icons/wi'
 import Home from './Home'
 import indexCSS from './index.module.css'
+import Timer from './Timer'
+import Search from './Search'
+import { useHistory } from "react-router-dom";
 
 const api = {
   key: 'c3512f3ec8bd5a8b7c26d9756efd841c',
   base: 'https://api.openweathermap.org/data/2.5/' 
 }
 
-const CurrentWeatherData = () => {
 
+const CurrentWeatherData = () => {
+  
+  const history = useHistory();
   const [weather, setWeather] = useState({})
-  const [query, setQuery] = useState('')
   const [error, setError] = useState(null)
   const [show, setShow] = useState(false)
   const [loading, setLoading] = useState(false)
-  let [date,setDate] = useState(new Date());
-    
-    useEffect(() => {
-        var timer = setInterval(()=>setDate(new Date()), 1000 )
-        return function cleanup() {
-            clearInterval(timer)
-        }
-    });
+  let [date, setDate] = useState(new Date());
 
-
-  const search = evt => { 
-    if(evt.key === 'Enter'){
+  const search = (query) => {
+    console.log('poziva se iz search-a')
       setLoading(true)
-      
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => {
         if(!res.ok){
@@ -47,49 +42,26 @@ const CurrentWeatherData = () => {
       .then(result => { 
         console.log(result)
         setWeather(result)
-        setQuery('')
         setShow(true)
         setLoading(false)
       })
       .catch(err => {
         setError(err.message);
+        setWeather({})
+        setLoading(false)
       })      
-    }  
   }
-
-  // useEffect(() => {
-  //   getLocation()
-  //   setTimeout(() => {
-  //     getLocation()
-  //   }, 10000)
-  // }, [])
-
-
-  // const getLocSuccess = (position) => {
-  //     console.log(position)
-  // }
-
-  // const getLocError = (errorLoc) => {
-  //   console.log(errorLoc)
-  // }
-
-  // const getLocation = () => {
-  //   navigator.geolocation.getCurrentPosition(getLocSuccess, getLocError)
-  // }
  
-
   function Example() {
-    const [show, setShow] = useState(true);
-    const handleClose = () => setShow(false);
     return (
       <>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={error}>
           <Modal.Header>
             <Modal.Title>Unexpected Error</Modal.Title>
           </Modal.Header>
           <Modal.Body>Location does not exist</Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleClose} onClick={() => window.location.reload(false)}>
+            <Button variant="primary" onClick={() => setError(null)} >
               close
             </Button>
           </Modal.Footer>
@@ -174,9 +146,8 @@ const CurrentWeatherData = () => {
   return (
     <> 
       {error && <Example />}
-      <h2 className={indexCSS.time}>{date.toLocaleTimeString()}</h2>
-      <input type="text" placeholder=" Search city..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
-      <IoSearch size="30px" style={{color: "#6495ED", marginBottom: "2px", marginLeft: "-35px"}} />
+      <Search onSearch={search}/>
+      <Timer/>
       <div className={indexCSS.dateBuilder}>
         {dateBuilder(new Date())}
       </div>
@@ -186,6 +157,8 @@ const CurrentWeatherData = () => {
     </>
   );
 }
+
+
 
 export default CurrentWeatherData;
 
