@@ -1,31 +1,124 @@
-
 /* Navbar */
 
-.navbarIcon {
-  z-index: -1;
-  position: relative;
-}
-
-.cloudIcon {
-  position: absolute;
-  z-index: 1;
-  top: -17px;
-  margin-left: 240px;
-  color: #6495ED;
-}
-
-/* Site Logo */
-
-.logo {
-  margin-left: -20px;
- }
-
- /* App Name */
-
-.mainNavbarWeather {
+.weatherApp {
   font-size: 30px;
-  font-family: 'Roboto', sans-serif;
+  color: #6495ED; 
+  font-family: 'Courier Prime', monospace;
   text-decoration: underline;
   text-decoration-color: #6495ED;
-  z-index: 2;
+  margin-left: 22.5vw;
+}
+
+.icon {
+  left: 4vw;
+  top: 10px;
+  position: absolute;
+}
+
+@media screen and (min-width: 270px) and (max-width: 319px){
+  .weatherApp {
+    font-size: 20px;
+    margin-left: 20vw;
+  }
+  
+  .icon {
+    left: 2vw;
+    top: 0.5vh;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px){
+  .weatherApp {
+    font-size: 24px;
+    margin-left: 22vw;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 480px){
+  .weatherApp {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .weatherApp {
+    font-size: 33px;
+    margin-left: 32.8vw;
+  }
+
+  .icon {
+    left: 2.5vw;
+    top: 1.8vh;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .weatherApp {
+    font-size: 34px;
+    margin-left: 35.8vw;
+  }
+  
+  .icon {
+    left: 2vw;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .weatherApp {
+    font-size: 34px;
+    margin-left: 8vw;
+  }
+  
+  .icon {
+    top: 1.5vh;
+    height: 56px;
+    width: 56px;
+  }
+
+  .nav {
+    left: 30vw;
+  }
+
+  .navMain {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1224px) {
+  .weatherApp {
+    margin-left: 7vw;
+  }
+
+  .nav {
+    left: 40vw;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .weatherApp {
+    margin-left: 7vw;
+  }
+
+  .nav {
+    left: 45vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .weatherApp {
+    margin-left: 7vw;
+  }
+
+  .nav {
+    left: 50vw;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .nav {
+    left: 55vw;
+  }
 }

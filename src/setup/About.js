@@ -35,9 +35,9 @@ function ReturnSection() {
           </div>
           <div className={aboutCSS.footerLinks}>
             <a href="https://en.wikipedia.org/wiki/Privacy_policy"><b>Privacy Policy</b></a>
-            <p>|</p>
-            <a href="https://en.wikipedia.org/wiki/Terms_of_service"><b>Terms Of Service</b></a>
-            <p>|</p>
+            <p className={aboutCSS.footerLinksOne}>|</p>
+            <a className={aboutCSS.footerLinksTwo} href="https://en.wikipedia.org/wiki/Terms_of_service"><b>Terms Of Service</b></a>
+            <p className={aboutCSS.footerLinksOne}>|</p>
             <a href="https://en.wikipedia.org/wiki/FAQ"><b>FAQ</b></a>
           </div>
           <p className={aboutCSS.weatherAppTextTwo}>Thank you for using WeatherApp!</p>

@@ -1,7 +1,4 @@
-
-
 /* Footer/About */
-
 
 .footerContainer{
   background-color: #f2f2f2;
@@ -87,7 +84,7 @@ a.smFacebook, a.smTwitter, a.smYoutube, a.smInstagram, a.smLinkedin {
   justify-content: center;
 }
 
-.weatherImage{
+.weatherImage {
   height: 120px;
   width: 120px;
   display: block;
@@ -97,7 +94,7 @@ a.smFacebook, a.smTwitter, a.smYoutube, a.smInstagram, a.smLinkedin {
   margin-right: auto;
 }
 
-.greyLine{
+.greyLine {
   top: 712px;
   width: 100%;
   height: 5px;
@@ -125,10 +122,83 @@ a.smFacebook, a.smTwitter, a.smYoutube, a.smInstagram, a.smLinkedin {
   width: 120px;
 }
 
-.greyLineTwo{
+.greyLineTwo {
   top: 194px;
   width: 100%;
   height: 5px;
   background: grey;
   position: absolute;
+}
+
+@media screen and (min-width: 320px) and (max-width: 360px){
+  a.smFacebook, a.smTwitter, a.smYoutube, a.smInstagram, a.smLinkedin {
+    padding: 8px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .weatherAppTextFour {
+    margin-top: 50px;
+  }
+
+  .weatherAppTextTwo {
+    font-size: 20px;
+  }
+
+  .greyLine {
+    top: 628px;
+  }
+
+  .footerLinks {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .weatherAppText {
+    font-size: 30px;
+  }
+
+  a.smFacebook, a.smTwitter, a.smYoutube, a.smInstagram, a.smLinkedin {
+    padding: 15px;
+  }
+
+  .weatherAppTextFour {
+    margin-top: 70px;
+  }
+
+  .greyLine {
+    top: 635px;
+  }
+
+  .footerLinks {
+    font-size: 22px;
+  }
+
+  .footerLinksOne {
+    visibility: hidden;
+  }
+
+  .weatherImage {
+    margin-top: 20px;
+  }
+
+  .appImages {
+    margin-top: 40px;
+  }
+
+  .footerLinksTwo {
+    margin-right: 100px;
+  }
+}
+
+@media screen and (min-width: 1224px) {
+  .footerContainer{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

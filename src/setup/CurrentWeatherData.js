@@ -30,7 +30,6 @@ const CurrentWeatherData = () => {
   let [date, setDate] = useState(new Date());
 
   const search = (query) => {
-    console.log('poziva se iz search-a')
       setLoading(true)
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => {
@@ -88,7 +87,7 @@ const CurrentWeatherData = () => {
         <Card.Title></Card.Title>
           {(typeof weather.main != 'undefined') ? (
             <div className={indexCSS.weatherCardFont}>
-              <h4>{weather.name}, {weather.sys.country}</h4>
+              <h4 className={indexCSS.weatherTownAndCountry}>{weather.name}, {weather.sys.country}</h4>
               <h3 className={indexCSS.weatherMain}>{Math.round(weather.main.temp)}°C</h3>
               <div className={indexCSS.minMaxTemperature}>
                 <p>{Math.round(weather.main.temp_max)}°C</p>
@@ -151,7 +150,7 @@ const CurrentWeatherData = () => {
       <div className={indexCSS.dateBuilder}>
         {dateBuilder(new Date())}
       </div>
-      {loading ? <Spinner animation="border" variant="primary" className={indexCSS.spinner} /> : null  }
+      {loading ? <div className={indexCSS.spinnerContainer}><Spinner animation="border" variant="dark" className={indexCSS.spinner} /></div>  : null  }
       {show && <WeatherCard />}
       {show || <Home />}
     </>

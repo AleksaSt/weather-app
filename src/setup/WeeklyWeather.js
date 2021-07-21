@@ -105,8 +105,8 @@ const WeeklyWeather = () => {
                     <div className={weeklyCSS.lineClassTwo}></div>                 
                     <div><p>{Math.round(day.temp.min - 273.15)}°C</p></div>
                   </div>
-                  <div className={weeklyCSS.lineClassOne}></div>
                   <Button className={weeklyCSS.btn} onClick={() => showInfo(day)} variant="outline-light">More Details</Button>{' '}
+                  <div className={weeklyCSS.lineClassOne}></div>
     
                   { day.isExtended ? <div className={weeklyCSS.weatherCardWeeklyMainDetails}>
                     <div>
@@ -149,8 +149,7 @@ const WeeklyWeather = () => {
       <div className={weeklyCSS.dateBuilderWeekly}>
         {dateBuilder(new Date())}
       </div>
-      {/* <div className={weeklyCSS.sectionOne}></div> */}
-      {loading ? <div className={weeklyCSS.spinnerContainer}><Spinner animation="border" variant="primary" className={weeklyCSS.spinner}/></div>  : null  }
+      {loading ? <div className={weeklyCSS.spinnerContainer}><Spinner animation="border" variant="dark" className={weeklyCSS.spinner}/></div>  : null  }
      <div>
       {show && <WeatherCard />}
      </div>
